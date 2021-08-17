@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+{% block content %}
+  <h1>{% block title %} Welcome to FlaskBlog {% endblock %}</h1>
+  {% if not posts %}<p>No posts here so far.</p>{% endif %}
+  
+  <form method="post">
+    <div class="form-group">
+      <input 
+        name="search" 
+        placeholder="Search Bar"
+        class="form-control"/> 
+    </div> 
+    <div class="form-group">
+      <button type="submit" class="btn btn-secondary">Submit</button>
+  </div>
+  </form>
+
+  {% for post in posts %}
+    <a href="{{ url_for('posts.post', post_id=post.id) }}">
+      <h2>{{ post.title }}</h2>
+    </a>
+    <span class="badge badge-primary">{{ post.tag }}</span>
+    <span class="badge badge-primary">{{ post.created_at }}</span>
+    <a href="{{ url_for('posts.edit', post_id=post.id) }}">
+      <span class="badge badge-warning">Edit</span>
+    </a>
+    <hr>
+  {% endfor %}
+{% endblock %}
