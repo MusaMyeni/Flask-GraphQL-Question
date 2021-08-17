@@ -76,6 +76,22 @@ mutation {
 }
 ```
 
+### Fetch a single post
+
+To fetch all posts execute the following query in GraphiQL:
+
+```
+{
+  post(created_at: "2021" {
+    id
+    title
+    content
+    createdAt
+    tags
+  }
+}
+
+
 ### Fetch all posts
 
 To fetch all posts execute the following query in GraphiQL:
@@ -101,11 +117,15 @@ We need you to take this sample project, fork the repository, and add some extra
 
 ### Key goals and deliverables
 
-- We would like to be able to tag posts by associating zero or more tags with a single post.
-- We would like to filter the list of posts by tag.
-- We would like to filter posts by the date they were created.
-- Some of our client consume the blog content via the GraphQL API. Currently they can only list and create posts, but have asked for the ability to edit and delete posts.
-- We would also like to filter posts by tag and creation date via the GraphQL API.
+- We would like to be able to tag posts by associating zero or more tags with a single post - Created a many-to-many relationship for tags. 
+
+- We would like to filter the list of posts by tag. tag labels are searchable via the front end.
+
+- We would like to filter posts by the date they were created. This was not implemented to completion. 
+
+- Some of our client consume the blog content via the GraphQL API. Currently they can only list and create posts, but have asked for the ability to edit and delete posts. This was not implemented.
+
+- We would also like to filter posts by tag and creation date via the GraphQL API. Posts can be filtered by date, although some breaking bugs do exist (only showing first item in list)
 
 **Bonus points**
 
@@ -115,7 +135,7 @@ We need you to take this sample project, fork the repository, and add some extra
 
 ### Dependencies and tools
 
-You may install any other third-party dependencies and tools.
+You may install any other third-party dependencies and tools. - No additional dependancies were installed.
 
 ### Assignment submission
 
