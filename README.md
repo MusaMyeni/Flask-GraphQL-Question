@@ -82,7 +82,7 @@ To fetch all posts execute the following query in GraphiQL:
 
 ```
 {
-  posts {
+  all_posts {
     edges {
       node {
         id
