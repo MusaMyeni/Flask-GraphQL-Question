@@ -80,7 +80,6 @@ mutation {
 
 To fetch all posts execute the following query in GraphiQL:
 
-```
 {
   post(created_at: "2021" {
     id
@@ -90,6 +89,7 @@ To fetch all posts execute the following query in GraphiQL:
     tags
   }
 }
+...
 
 
 ### Fetch all posts
