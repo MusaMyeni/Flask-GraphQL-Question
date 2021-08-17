@@ -79,7 +79,7 @@ mutation {
 ### Fetch a single post
 
 To fetch all posts execute the following query in GraphiQL:
-
+...
 {
   post(created_at: "2021" {
     id
